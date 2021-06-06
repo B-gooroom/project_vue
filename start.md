@@ -9,4 +9,23 @@
 #### vue.js 시작하기
 1. CDN 으로 기존 코딩시스템에 적용 가능
 2. **Vue CLI 설치**
- - 
+
+
+#### Vue CLI
+```
+# Vue CLI 설치
+npm install -g @vue/cli
+
+# Vue.js 프로젝트 생성
+vue create vue-study
+## Normal type without Test ([Vue 2] dart-sass, babel, router, vuex, eslint) 선택
+
+# VSCode로 해당 디렉토리 열기
+ ## build
+ npm run build
+ npm install -g serve
+ serve -s dist
+
+ ## 프로젝트 실행
+ npm run serve
+```
