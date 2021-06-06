@@ -29,3 +29,7 @@ vue create vue-study
  ## 프로젝트 실행
  npm run serve
 ```
+
+#### 터미널 - 경로
+* 현재 내 경로 위치? >> pwd 입력
+* 디렉토리 이동 명령어 >> cd/ 상위 폴더로 이동 >> cd ..
