@@ -4,7 +4,8 @@
 ***
 
 ### 1_ Vue Component 만들기
-* 사용할 component >> App.vue 파일에 script 추가
+* Component >> 화면의 영역을 일정한 단위로 쪼개서 활용 가능한 형태로 관리
+* 사용할 Component >> App.vue 파일에 script 추가
 ```html
 <script>
 import Header from './components/Header.vue'
@@ -20,7 +21,7 @@ export default {
 }
 </script>
 ```
-* 사용할 component >> 파일 생성
+* 사용할 Component >> 파일 생성
 <img width="222" alt="스크린샷 2021-06-06 18 38 26" src="https://user-images.githubusercontent.com/79742210/120919887-f33c4580-c6f6-11eb-9a59-85b23ca98536.png">
 
 * App.vue >> Component로 분류
