@@ -29,3 +29,29 @@ export default {
 
 * 만든 Component 모두 분류
 <img width="530" alt="스크린샷 2021-06-06 18 29 13" src="https://user-images.githubusercontent.com/79742210/120919974-5201bf00-c6f7-11eb-99b0-98825f0bec9f.png">
+
+
+### 2_ v-show/ v-if/ props
+* v-show >> html display 속성 / none = 'false'
+* v-if >> if문 / True 값일 때만 보여줌
+```html
+<Header v-show="true"></Header>
+<Nav v-if="true"></Nav>
+```
+
+* props >> 부모 component에서 자식 component로 값 전달
+```html
+- 특정한 명령이 없다면 자식 compnent가 가지고 있는 'Copyright'라는 값을 불러옴
+<Footer :title="'copy'"></Footer>
+```
+```html
+<script>
+export default {
+  props: {
+    title: {
+      default: 'Copyright'
+    }
+  }
+}
+</script>
+```
