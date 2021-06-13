@@ -55,3 +55,36 @@ export default {
 }
 </script>
 ```
+
+### 3_ Vue Router
+
+
+### 4_ Members Store 만들기
+* Component가 바라보고 있는 함수 등의 약속들! > 따라서 store 안의 값이 바뀌면 바라보고 있는 Component들의 값도 바뀜 
+
+- store 생성
+* src/store/moduleMembers.js
+```js
+export const moduleMembers = {
+  state: {
+    members: [],
+    member: {
+      name: '',
+      age: ''
+    }
+  },
+  mutations: {
+  },
+  actions: {
+    membersCreate(thisStore) {
+      thisStore.state.members.push({
+        name: thisStore.state.member.name,
+        age: thisStore.state.member.age
+      })
+      console.log('Done membersCreate', moduleMembers.state.members)
+    }
+  }
+}
+```
+* 그리고 생성한 store파일 /index.js 에 import & export
+<img width="457" alt="스크린샷 2021-06-14 01 34 33" src="https://user-images.githubusercontent.com/79742210/121815327-dbddf900-ccb0-11eb-98f3-27cc241a5aaa.png">
