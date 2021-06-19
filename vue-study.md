@@ -57,6 +57,28 @@ export default {
 ```
 
 ### 3_ Vue Router
+* single page application >> 같은 화면에서 보여주는 화면을 변화시키면서 그려줌(화면전환) >> 바뀌면서 그려주는 부분 >> router-view
+* Header / Nav(body) / Footer >> Nav 부분 == Router
+```js
+import Members from '../components/contents/Members.vue'
+import Search from '../components/contents/Search.vue'
+
+Vue.use(VueRouter)
+
+const routes = [
+  { path: '/', redirect: '/members' },
+  {
+    path: '/members',
+    name: 'Members',
+    component: Members
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search
+  }
+]
+```
 
 
 ### 4_ Members Store 만들기
