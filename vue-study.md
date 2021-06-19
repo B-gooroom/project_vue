@@ -1,6 +1,6 @@
-## vue-study project 만들기_0605
+## vue-study project 만들기
 
-### 0_ markup 파일 추가 
+### 0_ markup 파일 추가(html+css)
 ***
 
 ### 1_ Vue Component 만들기
