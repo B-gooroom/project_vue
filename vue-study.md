@@ -58,7 +58,7 @@ export default {
 
 ### 3_ Vue Router
 * single page application >> 같은 화면에서 보여주는 화면을 변화시키면서 그려줌(화면전환) >> 바뀌면서 그려주는 부분 >> router-view
-* Header / Nav(body) / Footer >> Nav 부분 == Router
+* Header / Contents(body) / Footer >> Contents 부분 == Router
 ```js
 import Members from '../components/contents/Members.vue'
 import Search from '../components/contents/Search.vue'
@@ -79,7 +79,11 @@ const routes = [
   }
 ]
 ```
-
+* 활성화시킬 텍스트에 link 붙이기 >> html 'a' 태그의 역할
+```html
+<li><h2><router-link :to="{name: 'Members'}" active-class="active">Members</router-link></h2></li>
+<li><h2><router-link :to="{path: '/search'}" active-class="active">Search</router-link></h2></li>
+```
 
 ### 4_ Members Store 만들기
 * Component가 바라보고 있는 함수 등의 약속들! > 따라서 store 안의 값이 바뀌면 바라보고 있는 Component들의 값도 바뀜 
