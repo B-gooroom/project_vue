@@ -89,8 +89,8 @@ const routes = [
 #### Create
 * Component가 바라보고 있는 함수 등의 약속들! > 따라서 store 안의 값이 바뀌면 바라보고 있는 Component들의 값도 바뀜(==html)
 * store >> red project 에서 js의 역할(==javascript)
-  - store 생성
-* src/store/moduleMembers.js
+* store 생성
+  - src/store/moduleMembers.js
 ```js
 export const moduleMembers = {
   state: {
@@ -113,11 +113,13 @@ export const moduleMembers = {
   }
 }
 ```
-* 그리고 생성한 store파일 /index.js 에 import & export
+  - 그리고 생성한 store파일 /index.js 에 import & export
   - js에서 'script'태그로 라이브러리 추가하는거랑 비슷한 원리
 <img width="457" alt="스크린샷 2021-06-14 01 34 33" src="https://user-images.githubusercontent.com/79742210/121815327-dbddf900-ccb0-11eb-98f3-27cc241a5aaa.png">
-* src/components/contents/Members.vue
-  - Inject components
+
+* Inject components
+  - src/components/contents/Members.vue
+
 
 ```js
 <template>
@@ -178,6 +180,45 @@ export default {
 ```
 
 #### Read
+* Read = mutations/actions를 js에! create가 아니기 때문에 !state
+* js에는 membersRead가 불러올 값, 역할을 적어줌
+  - src/store/moduleMembers.js
+```js
+  mutations: {
+    membersRead(state, members) {
+      state.members = members
+    }
+  actions: {
+    membersRead(thisStore) {
+      const members = [{
+        name: '홍길동',
+        age: 20
+      }, {
+        name: '춘향이',
+        age: 16
+      }]
+      thisStore.commit('membersRead', members)
+      console.log('Done membersRead', moduleMembers.state.members)
+    }
+
+```
+* components에는 수기값을 빼고 index를 이용하여 접근할 수 있는 경로를 적어줌
+  - src/components/contents/Memebers.vue
+```js
+<tr v-for="(member, index) in members" :key="index">
+  <td>{{member.name}}</td>
+  <td>{{member.age}}</td>
+
+```
+```js
+export default {
+  computed: {
+    members() {
+      return this.$store.state.members.members
+    }
+  created() {
+    this.$store.dispatch('membersRead')
+```
 
 #### Delete
 
