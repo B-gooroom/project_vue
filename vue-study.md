@@ -85,9 +85,10 @@ const routes = [
 <li><h2><router-link :to="{path: '/search'}" active-class="active">Search</router-link></h2></li>
 ```
 
-### 4_ Members Store 만들기
-* Component가 바라보고 있는 함수 등의 약속들! > 따라서 store 안의 값이 바뀌면 바라보고 있는 Component들의 값도 바뀜 
-* store >> red project 에서 js의 역할
+### 4_ Members Store CRUD
+#### Create
+* Component가 바라보고 있는 함수 등의 약속들! > 따라서 store 안의 값이 바뀌면 바라보고 있는 Component들의 값도 바뀜(==html)
+* store >> red project 에서 js의 역할(==javascript)
 - store 생성
 * src/store/moduleMembers.js
 ```js
@@ -115,11 +116,63 @@ export const moduleMembers = {
 * 그리고 생성한 store파일 /index.js 에 import & export
   - js에서 'script'태그로 라이브러리 추가하는거랑 비슷한 원리
 <img width="457" alt="스크린샷 2021-06-14 01 34 33" src="https://user-images.githubusercontent.com/79742210/121815327-dbddf900-ccb0-11eb-98f3-27cc241a5aaa.png">
+- Inject components
 
-### 5_ Members Store CRUD
-
-#### Create
 ```js
+<template>
+  <div>
+    <h3>Members</h3>
+    <hr class="d-block" />
+    <div>
+      <h4>Read</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Modify</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>홍길동</td>
+            <td>20</td>
+            <td>
+              <button>Update</button>
+              <button>Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr class="d-block" />
+    <div>
+      <h4>Create</h4>
+      <input type="text" placeholder="Name" v-model="member.name" />
+      <input type="text" placeholder="Age" v-model="member.age" />
+      <button @click="membersCreate()">Create</button>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  computed: {
+    member() {
+      return this.$store.state.members.member
+    }
+  },
+  methods: {
+    membersCreate() {
+      this.$store.dispatch('membersCreate')
+    }
+  },
+  created() {
+    this.member.name = ''
+    this.member.age = ''
+  }
+}
+</script>
 
 ```
 
