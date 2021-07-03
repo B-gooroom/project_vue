@@ -89,7 +89,7 @@ const routes = [
 #### Create
 * Component가 바라보고 있는 함수 등의 약속들! > 따라서 store 안의 값이 바뀌면 바라보고 있는 Component들의 값도 바뀜(==html)
 * store >> red project 에서 js의 역할(==javascript)
-- store 생성
+  - store 생성
 * src/store/moduleMembers.js
 ```js
 export const moduleMembers = {
@@ -116,7 +116,8 @@ export const moduleMembers = {
 * 그리고 생성한 store파일 /index.js 에 import & export
   - js에서 'script'태그로 라이브러리 추가하는거랑 비슷한 원리
 <img width="457" alt="스크린샷 2021-06-14 01 34 33" src="https://user-images.githubusercontent.com/79742210/121815327-dbddf900-ccb0-11eb-98f3-27cc241a5aaa.png">
-- Inject components
+* src/components/contents/Members.vue
+  - Inject components
 
 ```js
 <template>
