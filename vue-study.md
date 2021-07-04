@@ -220,6 +220,16 @@ export default {
     this.$store.dispatch('membersRead')
 ```
 
-#### Delete
-
 #### Update
+* js >> actions에 불러올 update 역할 추가
+  - src/store/moduleMembers.js
+```js
+  actions: {
+    membersUpdate(thisStore, memberUpdate) {
+      thisStore.state.members[memberUpdate.index] = memberUpdate.member
+      console.log('Done membersUpdate', moduleMembers.state.members)
+    }
+```
+
+
+#### Delete
