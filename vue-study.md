@@ -230,6 +230,23 @@ export default {
       console.log('Done membersUpdate', moduleMembers.state.members)
     }
 ```
-
-
+* {{memer.name}} / {{member.age}}의 경로로 가져오던 값을 >> input 태그 안에 넣어서 v-model로 보여줌
+* {{ 값 }} >> innerhtml
+* input > v-model >> value
+```js
+<td><input type="text" placeholder="Name" v-model="member.name" /></td>
+<td><input type="text" placeholder="Age" v-model="member.age" /></td>
+<td>
+  <button @click="membersUpdate(index, member)">Update</button>
+```
+```js
+export default {
+  methods: {
+    membersUpdate(index, member) {
+      this.$store.dispatch('membersUpdate', {
+        index: index,
+        member: member
+      })
+    }
+```
 #### Delete
