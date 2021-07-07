@@ -251,3 +251,23 @@ export default {
     }
 ```
 #### Delete
+* js >> index값으로 불러와서 delete
+  - src/store/moduleMembers.js
+```js
+  actions: {
+    membersDelete(thisStore, index) {
+      thisStore.state.members.splice(index, 1)
+      console.log('Done membersDelete', moduleMembers.state.members)
+    }
+```
+* @click >> onclick의 역할을 함 : click이라는 이벤트가 나타날 때 membersDelete의 액션을 index값으로 가져와서 삭제
+```js
+<button @click="membersDelete(index)">Delete</button>
+```
+```js
+export default {
+  methods: {
+    membersDelete(index) {
+      this.$store.dispatch('membersDelete', index)
+    }
+```
