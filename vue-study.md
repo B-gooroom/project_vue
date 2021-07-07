@@ -232,7 +232,8 @@ export default {
 ```
 * {{memer.name}} / {{member.age}}의 경로로 가져오던 값을 >> input 태그 안에 넣어서 v-model로 보여줌
 * {{ 값 }} >> innerhtml
-* input > v-model >> value
+* input + v-model >> value
+  - src/components/contents/Members.vue
 ```js
 <td><input type="text" placeholder="Name" v-model="member.name" /></td>
 <td><input type="text" placeholder="Age" v-model="member.age" /></td>
